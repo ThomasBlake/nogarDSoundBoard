@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".SettingsActivity"
+    tools:showIn="@layout/activity_settings">
+
+    <TextView
+        android:id="@+id/textView_TilePadding"
+        android:layout_width="277dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/textView_TileHeightResult"
+        android:layout_centerHorizontal="true"
+        android:text="Tile Padding"
+        android:textAlignment="center" />
+
+    <SeekBar
+        android:id="@+id/seekBar_TilePadding"
+        android:layout_width="315dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/seekBar_TileHeight"
+        android:layout_below="@+id/textView_TilePadding"
+        android:max="6"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/textView_TileHeightResult"
+        android:layout_width="44dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView_TileHeight"
+        android:layout_toEndOf="@+id/seekBar_TileAcross"
+        android:editable="true"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="305dp" />
+
+    <TextView
+        android:id="@+id/textView_TilePaddingResult"
+        android:layout_width="44dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView_TilePadding"
+        android:layout_toEndOf="@+id/textView_TilePadding"
+        android:editable="true"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="305dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar_TileHeight"
+        android:layout_width="315dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/seekBar_TileAcross"
+        android:layout_below="@+id/textView_TileHeight"
+        android:max="6"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar_TileAcross"
+        android:layout_width="315dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginStart="16dp"
+        android:max="6"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="277dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="Tile Columns"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="54dp" />
+
+    <TextView
+        android:id="@+id/textView_TileAcrossResult"
+        android:layout_width="44dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/seekBar_TileAcross"
+        android:layout_toEndOf="@+id/seekBar_TileAcross"
+        android:editable="true"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="305dp" />
+
+    <TextView
+        android:id="@+id/textView_TileHeight"
+        android:layout_width="277dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/seekBar_TileAcross"
+        android:layout_centerHorizontal="true"
+        android:text="Tile Height"
+        android:textAlignment="center" />
+
+</RelativeLayout>

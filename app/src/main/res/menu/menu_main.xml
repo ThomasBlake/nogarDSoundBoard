@@ -1,0 +1,56 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.generalraxor.nogardsoundboard.MainActivity">
+    <item
+        android:id="@+id/action_editToggle"
+        android:checkable="true"
+        android:checked="false"
+        android:enabled="true"
+        android:orderInCategory="100"
+        android:title="Toggle Editing"
+        android:visible="true"
+        app:showAsAction="never">
+
+    </item>
+
+
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_profiles"
+        android:orderInCategory="100"
+        android:title="@string/Profiles"
+        app:showAsAction="never" >
+        <menu>
+            <item
+                android:id="@+id/action_profile1"
+                android:orderInCategory="100"
+                android:title="Profile1"
+                app:showAsAction="never">
+
+            </item>
+            <item
+                android:id="@+id/action_profile2"
+                android:orderInCategory="100"
+                android:title="Profile2"
+                app:showAsAction="never">
+
+            </item>
+            <item
+                android:id="@+id/action_profile3"
+                android:orderInCategory="100"
+                android:title="Profile3"
+                app:showAsAction="never">
+
+            </item>
+        </menu>
+    </item>
+
+
+</menu>
