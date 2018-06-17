@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -21,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    ArrayList<Class> tileProperties = new ArrayList<>();
 
-    GridView primaryGridView = (GridView) findViewById(R.id.primary_GridView);
+
+    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.MainGridLayout_RecyclerView);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("CREATION", "onCreate: Program has started");
@@ -38,29 +39,18 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
 
 
                 SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref",0);
                 SharedPreferences.Editor editor = pref.edit();
-        primaryGridView.setNumColumns(3);
-        primaryGridView.setBackgroundColor(555);
-
-
-        primaryGridView.setPadding(pref.getInt("tilePaddingResult",2) ,pref.getInt("tilePaddingResult",2),pref.getInt("tilePaddingResult",2),pref.getInt("tilePaddingResult",2));
-
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
 
 
 
 
-            }
-        });
+
+
+
 
 
     }
