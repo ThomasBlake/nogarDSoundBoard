@@ -13,16 +13,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.GridView;
-
 import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
     String TAG = "CREATION";
 
 
 
+    ArrayList<Class> tileProperties = new ArrayList<>();
 
-
+    GridView primaryGridView = (GridView) findViewById(R.id.primary_GridView);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("CREATION", "onCreate: Program has started");
@@ -30,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        GridView primaryGridView = (GridView) findViewById(R.id.primary_GridView);
-     
+
+
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
