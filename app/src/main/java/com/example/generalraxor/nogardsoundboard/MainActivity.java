@@ -2,10 +2,12 @@ package com.example.generalraxor.nogardsoundboard;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -17,14 +19,17 @@ import android.widget.GridView;
 import java.util.ArrayList;
 
 
+
+
 public class MainActivity extends AppCompatActivity {
     String TAG = "CREATION";
+    String tileDB = "nogarDDB.db";
 
 
 
 
 
-    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.MainGridLayout_RecyclerView);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("CREATION", "onCreate: Program has started");
@@ -33,20 +38,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //CreateRecylcerView
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.MainGridLayout_RecyclerView); //defining objects can not be in class, must be in a method
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2)); //Set number of columns
 
-
-
+        //Standard thing
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Preferences
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref",0);//Get Preferences
+        SharedPreferences.Editor editor = pref.edit();//Set Preferences
 
+        //Open the database(Creating on first run)
+        SQLiteDatabase db = openOrCreateDatabase(tileDB,MODE_PRIVATE,null);
 
+        //Open a new table
+        db.execSQL("CREATE TABLE IF NOT EXISTS TileTable (Name VARCHAR, Description VARCHAR)");
 
-                SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref",0);
-                SharedPreferences.Editor editor = pref.edit();
-
-
-
+        //insert values into the table
+         db.execSQL("INSERT INTO TileTable VALUES('Tile1','This is a description of a tile');");
 
 
 
@@ -56,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-//   SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref",0);
+
 
 
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainTile"
+    >
+
+
+    <ImageButton
+        android:id="@+id/tileImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="54dp"
+        android:text="Tile Text"
+        android:backgroundTint="#099"
+        android:textColor="#F00"
+        />
+
+
+</RelativeLayout>
