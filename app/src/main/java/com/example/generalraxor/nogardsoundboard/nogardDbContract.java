@@ -5,7 +5,7 @@ import android.media.Image;
 import android.provider.MediaStore;
 
 public final class nogardDbContract {
-    private nogardDbContract(){} // make non-creatable
+//    private nogardDbContract(){} // make non-creatable... find out what "non-creatable" means
 
     public static final class TileInformationEntry{
         public static final String TABLE_NAME = "tile_information";
