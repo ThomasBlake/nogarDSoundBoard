@@ -41,7 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         Log.d(TAG, "RecyclerViewAdapter.onBindViewHolder: called");//This will report for each item in the RecyclerView.
 
 
@@ -51,10 +51,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.mainTile.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+
                 Log.d(TAG, "onClick: Tile was clicked on");
+
+                Toast.makeText(mContext,mtileTexts.get(position), Toast.LENGTH_SHORT).show();
+
             }
         });
-        Toast.makeText(mContext,mtileTexts.get(position), Toast.LENGTH_SHORT).show();
+
 
     }
 
